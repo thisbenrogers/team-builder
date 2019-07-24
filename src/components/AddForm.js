@@ -8,11 +8,11 @@ const AddForm = (props) => {
   // console.log("memberToEdit:", memberToEdit);
 
   const isEmpty = (obj) => {
-    for (let key in obj) {
-      if (obj.hasOwnProperty(key))
-        return false;
+    if (Object.entries(obj).length === 0 && obj.constructor === Object) {
+      return true;
+    } else {
+      return false;
     }
-    return true;
   }
 
   const handleSubmit = e => {

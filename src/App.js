@@ -8,43 +8,48 @@ import './App.css';
 const App = () => {
 
   const [memberToEdit, setMemberToEdit] = useState({});
+  const [editIndex, setEditIndex] = useState('');
   const [teamList, setTeamList] = useState([
     {
       name: 'Ben',
       email: 'ben@ben.ben',
-      role: 'The Ben'
+      role: 'The Ben',
+      index: '0'
     },
     {
       name: 'Benjamimah',
       email: 'some@thing.good',
-      role: 'BossJamimah'
+      role: 'BossJamimah',
+      index: '1'
     },
     {
       name: 'Bendrian',
       email: 'good@ness.gracious',
-      role: 'Sneeze excuser'
+      role: 'Sneeze excuser',
+      index: '2'
     },
     {
       name: 'Benelope',
       email: 'sakes@a.live',
-      role: 'Cheif Engineer'
+      role: 'Cheif Engineer',
+      index: '3'
     }
   ]);
   const [teamMember, setTeamMember] = useState(
     {
       name: '',
       email: '',
-      role: ''
+      role: '',
+      index: ''
     }
   );
 
-  useEffect(() => {
-    // console.log("memberToEdit: ", memberToEdit);
-  }, [memberToEdit]);
-
   const editMember = (member, e) => {
     e.preventDefault();
-    console.log("e:", e);
+    teamList.map(x => {
+
+    });
+    console.log("editIndex:", editIndex);
     console.log("member from editMember: ", member);
   }
 
@@ -54,7 +59,7 @@ const App = () => {
         <h1>Team Builder</h1>
       </header>
       <section>
-        <List setMemberToEdit={setMemberToEdit} teamList={teamList} />
+        <List setEditIndex={setEditIndex} setMemberToEdit={setMemberToEdit} teamList={teamList} />
         <AddForm editMember={editMember} memberToEdit={memberToEdit} teamMember={teamMember} setTeamMember={setTeamMember} teamList={teamList} setTeamList={setTeamList} />
       </section>
     </div >
