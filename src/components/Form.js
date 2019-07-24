@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Form = (props) => {
 
-  const { setTeamMember, teamMember } = props;
+  const { memberToEdit, setTeamMember, teamMember } = props;
 
   const handleChanges = e => {
     e.preventDefault();
     const updatedTeamMember = { ...teamMember, [e.target.name]: e.target.value };
     setTeamMember(updatedTeamMember);
   }
+
+  useEffect(() => {
+    setTeamMember(memberToEdit);
+  }, [memberToEdit]);
 
   return (
     <>

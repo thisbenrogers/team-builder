@@ -3,11 +3,13 @@ import React from 'react';
 
 const List = (props) => {
 
-  // const StyledWrapper = styled.div`
-
-  // `
-
+  const setMemberToEdit = props.setMemberToEdit;
   const teamList = props.teamList;
+
+  const handleSubmit = (member, e) => {
+    e.preventDefault();
+    setMemberToEdit(member);
+  }
 
   return (
     <div>
@@ -18,6 +20,7 @@ const List = (props) => {
             <h3>{member.name}</h3>
             <p>{member.email}</p>
             <p>{member.role}</p>
+            <button onClick={(e) => handleSubmit(member, e)}>edit member</button>
           </div>
         )
       })}
