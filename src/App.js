@@ -48,7 +48,7 @@ const App = () => {
         <h1>Team Builder</h1>
       </header>
       <section>
-        <List teamMember={teamMember} setTeamMember={setTeamMember} teamList={teamList} setTeamList={setTeamList} />
+        <List teamList={teamList} />
         <AddForm teamMember={teamMember} setTeamMember={setTeamMember} teamList={teamList} setTeamList={setTeamList} />
       </section>
     </div >

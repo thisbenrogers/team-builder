@@ -1,16 +1,20 @@
 import React from 'react';
 
-import Form from './Form';
-
 const List = (props) => {
 
-  const { teamList, setTeamList } = props;
+  const teamList = props.teamList;
 
   return (
     <>
       <h2>Team List</h2>
       {teamList.map((member, index) => {
-        return <p key={index}>{member.name}</p>
+        return (
+          <>
+            <h2 className={`member ${index}`}>{member.name}</h2>
+            <p>{member.email}</p>
+            <p>{member.role}</p>
+          </>
+        )
       })}
     </>
   )
