@@ -2,16 +2,13 @@ import React from 'react';
 
 const Form = (props) => {
 
-  const { memberObj, setTeamMember, teamMember } = props;
+  const { setTeamMember, teamMember } = props;
 
   const handleChanges = e => {
     e.preventDefault();
     const updatedTeamMember = { ...teamMember, [e.target.name]: e.target.value };
     setTeamMember(updatedTeamMember);
   }
-
-  console.log("memberObj: ", memberObj);
-
 
   return (
     <>

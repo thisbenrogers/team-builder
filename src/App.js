@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import List from './components/List';
 import AddForm from './components/AddForm';
@@ -8,6 +8,11 @@ import './App.css';
 const App = () => {
 
   const [teamList, setTeamList] = useState([
+    {
+      name: 'Ben',
+      email: 'ben@ben.ben',
+      role: 'The Ben'
+    },
     {
       name: 'Benjamimah',
       email: 'some@thing.good',
@@ -22,14 +27,8 @@ const App = () => {
       name: 'Benelope',
       email: 'sakes@a.live',
       role: 'Cheif Engineer'
-    },
-    {
-      name: 'Ben',
-      email: 'ben@ben.ben',
-      role: 'The Ben'
     }
   ]);
-
   const [teamMember, setTeamMember] = useState(
     {
       name: '',
@@ -37,10 +36,6 @@ const App = () => {
       role: ''
     }
   );
-
-  useEffect(() => {
-    console.log("Team List in useEffect: ", teamList);
-  }, [teamList]);
 
   return (
     <div className="App" >
